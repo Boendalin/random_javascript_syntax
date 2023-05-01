@@ -1,5 +1,7 @@
 function decideLanguage() {
+    let languages = ["Swedish", "English", "Danish"];
 
+    return languages[Math.floor(Math.random()*languages.length)];
 }
 
 function phrase(language) {
@@ -23,15 +25,29 @@ function phrase(language) {
                             "Alle vil blive velsignet på sin egen tro.",
                             "Nej, her kommer da slet ikke blive nogle børn."];
             break;
+
+        default:
+            phrases = ["I don't know this langauge."];
+            break;
     };
+
+    return phrases[Math.floor(Math.random()*phrases.length)];
 }
 
 function famousPerson(){
     let persons = ["Burt Reynolds", "Barrack Obama", 
                     "Astrid Lindgren", "Mette Fredriksen",
-                    "Abdallah ibn Jakut"]
+                    "Abdallah ibn Jakut"];
 
-    return persons[Math.floor(Math.random()*persons.length)]
+    return persons[Math.floor(Math.random()*persons.length)];
 }
-console.log(famousPerson())
+
+function returnMessage() {
+    console.log(phrase(decideLanguage()) );
+    console.log(" - " + famousPerson());    
+}
+
+returnMessage()
+
+//console.log(famousPerson(), decideLanguage(), phrase(decideLanguage()))
 
